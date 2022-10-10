@@ -9,7 +9,11 @@ const Navbar = () => {
       <h1>RWA</h1>
       <nav className="nav-container">
         <Link
-          className={url.pathname.includes("home") ? "selected" : ""}
+          className={
+            url.pathname.includes("home") || url.pathname === "/"
+              ? "selected"
+              : ""
+          }
           to="home">
           Home
         </Link>
