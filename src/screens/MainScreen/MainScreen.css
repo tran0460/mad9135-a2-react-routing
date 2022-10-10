@@ -1,0 +1,9 @@
+.main-container {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+  gap: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
