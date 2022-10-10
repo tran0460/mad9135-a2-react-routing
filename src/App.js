@@ -11,7 +11,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<MainScreen />}>
-          <Route index path="home" element={<HomeScreen />} />
+          <Route index element={<HomeScreen />} />
+          <Route path="home" element={<HomeScreen />} />
           <Route path="hourly" element={<HourlyScreen />} />
           <Route path="daily" element={<DailyScreen />} />
           <Route path="*" element={<ErrorScreen />} />
