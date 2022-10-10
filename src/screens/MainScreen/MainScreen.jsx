@@ -6,7 +6,9 @@ const MainScreen = () => {
   return (
     <div>
       <Navbar />
-      <Outlet />
+      <div className="container">
+        <Outlet />
+      </div>
     </div>
   );
 };
