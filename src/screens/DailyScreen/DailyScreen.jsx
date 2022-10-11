@@ -7,9 +7,10 @@ const DailyScreen = () => {
   if (!data.daily) return;
   return (
     <div>
-      {data.daily.map((data) => (
-        <HourlyCard data={data} />
-      ))}
+      {data.daily.map((data, index) => {
+        if (index >= 6) return;
+        return <HourlyCard data={data} />;
+      })}
     </div>
   );
 };
