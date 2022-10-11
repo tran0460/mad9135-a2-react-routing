@@ -23,6 +23,13 @@ const MainScreen = () => {
       },
       units: "metric",
     });
+    if (localStorage.length >= 3) {
+      localStorage.removeItem(localStorage.key(0));
+    }
+    localStorage.setItem(
+      respObj.timezone.split("/")[1],
+      JSON.stringify(respObj)
+    );
     setWeatherData(respObj);
   };
 
