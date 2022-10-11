@@ -10,7 +10,8 @@ const DailyCard = ({ data }) => {
       <h4>{data.weather[0].description}</h4>
       <p>Date: {new Date(data.dt * 1000).toLocaleDateString()}</p>
       <p>Time: {new Date(data.dt * 1000).toLocaleTimeString()}</p>
-      <p>Feels like: {data.feels_like.day}</p>
+      <p>Feels like {data.feels_like.day} during the day</p>
+      <p>Feels like {data.feels_like.night} during the night</p>
       <p></p>
     </div>
   );
