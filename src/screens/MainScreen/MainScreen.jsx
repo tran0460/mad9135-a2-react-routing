@@ -35,6 +35,13 @@ const MainScreen = () => {
   };
 
   useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((res) => {
+        setLocation({ lat: res.coords.latitude, lon: res.coords.longitude });
+      });
+    }
+  }, []);
+  useEffect(() => {
     if (!location.lat || !location.lon) return;
     getWeatherData();
   }, [location]);
