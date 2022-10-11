@@ -5,7 +5,10 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 
 const HistoryDropdown = () => {
   return (
-    <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+    <DropdownButton
+      id="dropdown-basic-button"
+      variant="Secondary"
+      title="History">
       {JSON.parse(localStorage.getItem("history")).map((item) => {
         return <Dropdown.Item>{item}</Dropdown.Item>;
       })}
