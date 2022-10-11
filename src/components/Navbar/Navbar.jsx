@@ -1,12 +1,13 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import HistoryDropdown from "../HistoryDropdown/HistoryDropdown";
 import "./Navbar.css";
 
 const Navbar = () => {
   const url = useLocation();
   return (
-    <div className="navbar container">
-      <h1>RWA</h1>
+    <div className="navbar">
+      <h1 className="m-0">RWA</h1>
       <nav className="nav-container">
         <Link
           className={
@@ -28,6 +29,11 @@ const Navbar = () => {
           Hourly
         </Link>
       </nav>
+      {localStorage.getItem("history") && (
+        <aside>
+          <HistoryDropdown />
+        </aside>
+      )}
     </div>
   );
 };
