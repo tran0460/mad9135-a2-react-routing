@@ -1,6 +1,6 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-import HourlyCard from "../../components/HourlyCard/HourlyCard";
+import DailyCard from "../../components/DailyCard/DailyCard";
 
 const DailyScreen = () => {
   const [data] = useOutletContext();
@@ -9,7 +9,7 @@ const DailyScreen = () => {
     <div>
       {data.daily.map((data, index) => {
         if (index >= 6) return;
-        return <HourlyCard data={data} />;
+        return <DailyCard data={data} />;
       })}
     </div>
   );
