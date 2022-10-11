@@ -9,7 +9,7 @@ import "./MainScreen.css";
 const MainScreen = () => {
   const [query, setQuery] = useState("");
   const [location, setLocation] = useState({});
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState();
   const handleSearch = async () => {
     const respObj = await getGeolocation(query);
     setLocation(respObj);
@@ -25,13 +25,11 @@ const MainScreen = () => {
     });
     setWeatherData(respObj);
   };
+
   useEffect(() => {
     if (!location.lat || !location.lon) return;
     getWeatherData();
   }, [location]);
-  useEffect(() => {
-    console.log(weatherData);
-  }, [weatherData]);
   return (
     <div>
       <Navbar />
@@ -41,7 +39,14 @@ const MainScreen = () => {
           setQuery={setQuery}
           onSearch={() => handleSearch()}
         />
-        <Outlet context={[weatherData]} />
+        {weatherData ? (
+          <Outlet context={[weatherData]} />
+        ) : (
+          <>
+            <h2>Welcome</h2>
+            <p>Type in a city / country to see the weather</p>
+          </>
+        )}
       </div>
     </div>
   );

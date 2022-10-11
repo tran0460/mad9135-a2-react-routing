@@ -6,7 +6,6 @@ const HomeScreen = () => {
   const [data] = useOutletContext();
   return (
     <div>
-      HomeScreen
       <HomeCard data={data} />
     </div>
   );
