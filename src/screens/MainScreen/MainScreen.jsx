@@ -23,14 +23,14 @@ const MainScreen = () => {
       },
       units: "metric",
     });
-    if (localStorage.length >= 3) {
-      localStorage.removeItem(localStorage.key(0));
-    }
-    localStorage.setItem(
-      respObj.timezone.split("/")[1],
-      JSON.stringify(respObj)
-    );
+    const history = JSON.parse(localStorage.getItem("history"));
+    if (!history) localStorage.setItem("history", JSON.stringify([]));
+    const newHistory = history ? history : [];
+    if (newHistory.length >= 3) newHistory.pop();
+    if (!newHistory.includes(respObj.timezone.split("/")[1]))
+      newHistory.unshift(respObj.timezone.split("/")[1]);
     setWeatherData(respObj);
+    localStorage.setItem("history", JSON.stringify(newHistory));
   };
 
   useEffect(() => {
