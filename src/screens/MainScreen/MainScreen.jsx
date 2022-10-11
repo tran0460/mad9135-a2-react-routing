@@ -41,7 +41,7 @@ const MainScreen = () => {
           setQuery={setQuery}
           onSearch={() => handleSearch()}
         />
-        <Outlet />
+        <Outlet context={[weatherData]} />
       </div>
     </div>
   );
