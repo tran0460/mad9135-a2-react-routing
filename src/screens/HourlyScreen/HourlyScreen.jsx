@@ -1,7 +1,18 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
+import HourlyCard from "../../components/HourlyCard/HourlyCard";
 
 const HourlyScreen = () => {
-  return <div>HourlyScreen</div>;
+  const [data] = useOutletContext();
+  if (!data.daily) return;
+  return (
+    <div>
+      {data.hourly.map((data, index) => {
+        if (index >= 6) return;
+        return <HourlyCard data={data} />;
+      })}
+    </div>
+  );
 };
 
 export default HourlyScreen;
