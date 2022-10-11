@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import HistoryDropdown from "../HistoryDropdown/HistoryDropdown";
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ handleSearch }) => {
   const url = useLocation();
   return (
     <div className="navbar">
@@ -31,7 +31,7 @@ const Navbar = () => {
       </nav>
       {localStorage.getItem("history") && (
         <aside>
-          <HistoryDropdown />
+          <HistoryDropdown handleSearch={handleSearch} />
         </aside>
       )}
     </div>

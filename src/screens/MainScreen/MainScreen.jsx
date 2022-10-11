@@ -10,8 +10,8 @@ const MainScreen = () => {
   const [query, setQuery] = useState("");
   const [location, setLocation] = useState({});
   const [weatherData, setWeatherData] = useState();
-  const handleSearch = async () => {
-    const respObj = await getGeolocation(query);
+  const handleSearch = async (customQuery) => {
+    const respObj = await getGeolocation(customQuery ? customQuery : query);
     setLocation(respObj);
   };
 
@@ -39,7 +39,7 @@ const MainScreen = () => {
   }, [location]);
   return (
     <div>
-      <Navbar />
+      <Navbar handleSearch={handleSearch} />
       <div className="container main-container">
         <Searchbar
           query={query}
