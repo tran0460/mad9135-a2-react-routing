@@ -4,7 +4,6 @@ import { createWeatherIcon } from "../../utils/weather.service";
 const HourlyCard = ({ data }) => {
   if (!data) return;
   const src = createWeatherIcon(data.weather[0].icon).src;
-  console.log(data);
   return (
     <div>
       <p>*********************</p>
