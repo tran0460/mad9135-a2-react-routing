@@ -25,13 +25,15 @@ const MainScreen = () => {
       units: "metric",
     });
     const history = JSON.parse(localStorage.getItem("history"));
-    if (!history) localStorage.setItem("history", JSON.stringify([]));
-    const newHistory = history ? history : [];
-    if (newHistory.length >= 3) newHistory.pop();
-    if (!newHistory.includes(respObj.timezone.split("/")[1]))
-      newHistory.unshift(respObj.timezone.split("/")[1]);
+    if (location.city) {
+      if (!history) localStorage.setItem("history", JSON.stringify([]));
+      const newHistory = history ? history : [];
+      if (newHistory.length >= 3) newHistory.pop();
+      if (!newHistory.includes(location.city.split(" ")[0].replace(",", "")))
+        newHistory.unshift(location.city.split(" ")[0].replace(",", ""));
+      localStorage.setItem("history", JSON.stringify(newHistory));
+    }
     setWeatherData(respObj);
-    localStorage.setItem("history", JSON.stringify(newHistory));
   };
 
   useEffect(() => {
