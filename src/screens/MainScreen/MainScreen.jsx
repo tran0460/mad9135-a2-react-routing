@@ -5,12 +5,15 @@ import Searchbar from "../../components/Searchbar/Searchbar";
 import { getGeolocation } from "../../utils/map.service";
 import { getForecast } from "../../utils/weather.service";
 import "./MainScreen.css";
+import { DotPulse } from "@uiball/loaders";
 
 const MainScreen = () => {
   const [query, setQuery] = useState("");
   const [location, setLocation] = useState({});
   const [weatherData, setWeatherData] = useState();
+  const [loading, setLoading] = useState(false);
   const handleSearch = async (customQuery) => {
+    setLoading(true);
     const respObj = await getGeolocation(customQuery ? customQuery : query);
     setLocation(respObj);
     setQuery("");
@@ -34,13 +37,21 @@ const MainScreen = () => {
       localStorage.setItem("history", JSON.stringify(newHistory));
     }
     setWeatherData(respObj);
+    setLoading(false);
   };
 
   useEffect(() => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((res) => {
-        setLocation({ lat: res.coords.latitude, lon: res.coords.longitude });
-      });
+      setLoading(true);
+      navigator.geolocation.getCurrentPosition(
+        (res) => {
+          setLocation({ lat: res.coords.latitude, lon: res.coords.longitude });
+          setLoading(false);
+        },
+        () => {
+          setLoading(false);
+        }
+      );
     }
   }, []);
   useEffect(() => {
@@ -56,12 +67,18 @@ const MainScreen = () => {
           setQuery={setQuery}
           onSearch={() => handleSearch()}
         />
-        {weatherData ? (
-          <Outlet context={[weatherData]} />
+        {loading ? (
+          <DotPulse size={40} speed={1.3} color="black" />
         ) : (
           <>
-            <h2>Welcome</h2>
-            <p>Type in a city / country to see the weather</p>
+            {weatherData ? (
+              <Outlet context={[weatherData]} />
+            ) : (
+              <>
+                <h2>Welcome</h2>
+                <p>Type in a city / country to see the weather</p>
+              </>
+            )}
           </>
         )}
       </div>
