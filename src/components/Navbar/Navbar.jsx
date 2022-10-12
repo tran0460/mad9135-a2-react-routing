@@ -6,7 +6,7 @@ import "./Navbar.css";
 const Navbar = ({ handleSearch }) => {
   const url = useLocation();
   return (
-    <div className="navbar">
+    <div className="navbar-main">
       <h1 className="m-0">RWA</h1>
       <nav className="nav-container">
         <Link
