@@ -7,3 +7,24 @@
   justify-content: center;
   align-items: center;
 }
+
+.outlet-container {
+  width: 100%;
+}
+
+.screen-container {
+  width: 100%;
+}
+.screen-container.daily {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+@media only screen and (max-width: 768px) {
+  .screen-container.daily {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

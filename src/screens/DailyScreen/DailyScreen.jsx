@@ -6,7 +6,7 @@ const DailyScreen = () => {
   const [data] = useOutletContext();
   if (!data.daily) return;
   return (
-    <div>
+    <div className="screen-container daily">
       {data.daily.map((data, index) => {
         if (index >= 6) return;
         return <DailyCard data={data} />;

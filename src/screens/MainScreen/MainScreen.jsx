@@ -75,7 +75,9 @@ const MainScreen = () => {
         ) : (
           <>
             {weatherData ? (
-              <Outlet context={[weatherData]} />
+              <div className="outlet-container">
+                <Outlet context={[weatherData]} />
+              </div>
             ) : (
               <>
                 <h2>Welcome</h2>
