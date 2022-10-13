@@ -1,0 +1,15 @@
+.error-screen-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.error-text {
+  font-size: 3.5rem !important;
+  font-weight: 600 !important;
+}
+.error-screen-container > * {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
