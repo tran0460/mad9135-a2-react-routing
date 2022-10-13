@@ -28,7 +28,10 @@ const MainScreen = () => {
       units: "metric",
     });
     const history = JSON.parse(localStorage.getItem("history"));
-    if (location.city) {
+    if (
+      location.city &&
+      !history.includes(location.city.split(" ")[0].replace(",", ""))
+    ) {
       if (!history) localStorage.setItem("history", JSON.stringify([]));
       const newHistory = history ? history : [];
       if (newHistory.length >= 3) newHistory.pop();
