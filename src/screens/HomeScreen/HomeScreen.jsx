@@ -5,9 +5,9 @@ import { useOutletContext } from "react-router-dom";
 const HomeScreen = () => {
   const [data] = useOutletContext();
   return (
-    <div>
+    <>
       <HomeCard data={data} />
-    </div>
+    </>
   );
 };
 

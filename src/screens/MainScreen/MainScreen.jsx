@@ -59,7 +59,7 @@ const MainScreen = () => {
     getWeatherData();
   }, [location]);
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <Navbar handleSearch={handleSearch} />
       <div className="container main-container">
         <Searchbar
