@@ -6,7 +6,7 @@ const HourlyScreen = () => {
   const [data] = useOutletContext();
   if (!data.daily) return;
   return (
-    <div>
+    <div className="screen-container hourly">
       {data.hourly.map((data, index) => {
         if (index >= 6) return;
         return <HourlyCard data={data} />;

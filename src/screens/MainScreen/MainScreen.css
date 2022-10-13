@@ -15,7 +15,8 @@
 .screen-container {
   width: 100%;
 }
-.screen-container.daily {
+.screen-container.daily,
+.screen-container.hourly {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -23,7 +24,8 @@
   justify-content: space-evenly;
 }
 @media only screen and (max-width: 768px) {
-  .screen-container.daily {
+  .screen-container.daily,
+  .screen-container.hourly {
     flex-direction: column;
     justify-content: center;
   }

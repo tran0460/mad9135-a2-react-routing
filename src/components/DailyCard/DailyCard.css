@@ -14,6 +14,7 @@
 }
 h4 {
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .sm-card-container img {
   width: 50%;
