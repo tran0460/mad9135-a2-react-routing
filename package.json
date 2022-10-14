@@ -21,7 +21,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://tran0460.github.io/mad9135-a2-react-routing/",
   "scripts": {
     "predeploy": "yarn build",
     "deploy": "gh-pages -b gh-pages -d build",
@@ -47,5 +46,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://tran0460.github.io/mad9135-a2-react-routing/"
 }
