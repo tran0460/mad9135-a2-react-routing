@@ -30,7 +30,7 @@ const MainScreen = () => {
     const history = JSON.parse(localStorage.getItem("history"));
     if (
       location.city &&
-      !history.includes(location.city.split(" ")[0].replace(",", ""))
+      !history?.includes(location.city.split(" ")[0].replace(",", ""))
     ) {
       if (!history) localStorage.setItem("history", JSON.stringify([]));
       const newHistory = history ? history : [];
