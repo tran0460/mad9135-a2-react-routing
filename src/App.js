@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<MainScreen />}>
+        <Route path="/mad9135-a2-react-routing/" element={<MainScreen />}>
           <Route index element={<HomeScreen />} />
           <Route path="home" element={<HomeScreen />} />
           <Route path="hourly" element={<HourlyScreen />} />
