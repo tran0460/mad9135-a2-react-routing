@@ -16,17 +16,17 @@ const Navbar = ({ handleSearch }) => {
               ? "selected"
               : ""
           }
-          to="home">
+          to="/home">
           Home
         </NavLink>
         <NavLink
           className={url.pathname.includes("daily") ? "selected" : ""}
-          to="daily">
+          to="/daily">
           Daily
         </NavLink>
         <NavLink
           className={url.pathname.includes("hourly") ? "selected" : ""}
-          to="hourly">
+          to="/hourly">
           Hourly
         </NavLink>
       </nav>
