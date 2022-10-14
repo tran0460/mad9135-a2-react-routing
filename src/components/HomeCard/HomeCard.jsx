@@ -8,6 +8,7 @@ const HomeCard = ({ data }) => {
   if (!data.current) return;
   return (
     <div className="lg-card-container">
+      <p className="h2">Current weather:</p>
       <div className="home-card-header">
         <div>
           <img src={src} alt="" className="weather-icon-lg" />
