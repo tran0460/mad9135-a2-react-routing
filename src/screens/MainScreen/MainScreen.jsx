@@ -76,6 +76,9 @@ const MainScreen = () => {
           <>
             {weatherData ? (
               <div className="outlet-container">
+                <p className="location">
+                  {location.city ? location.city : "Your location"}
+                </p>
                 <Outlet context={[weatherData]} />
               </div>
             ) : (

@@ -11,6 +11,12 @@
 .outlet-container {
   width: 100%;
 }
+p.location {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 5rem;
+}
 
 .screen-container {
   width: 100%;
