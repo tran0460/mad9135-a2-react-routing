@@ -1,15 +1,11 @@
 import React from "react";
 import "./ErrorScreen.css";
-import { NavLink } from "react-router-dom";
 
 const ErrorScreen = () => {
   return (
     <div className="error-screen-container">
       <p className="error-text">404</p>
       <p>Page not found</p>
-      <NavLink end to="home">
-        Home
-      </NavLink>
     </div>
   );
 };

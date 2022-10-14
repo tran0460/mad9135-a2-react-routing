@@ -15,8 +15,8 @@ function App() {
           <Route path="home" element={<HomeScreen />} />
           <Route path="hourly" element={<HourlyScreen />} />
           <Route path="daily" element={<DailyScreen />} />
+          <Route path="*" element={<ErrorScreen />} />
         </Route>
-        <Route path="*" element={<ErrorScreen />} />
       </Routes>
     </>
   );
