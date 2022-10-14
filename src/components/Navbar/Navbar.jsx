@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import HistoryDropdown from "../HistoryDropdown/HistoryDropdown";
 import "./Navbar.css";
 
@@ -9,25 +9,26 @@ const Navbar = ({ handleSearch }) => {
     <div className="navbar-main">
       <h1 className="m-0">RWA</h1>
       <nav className="nav-container">
-        <Link
+        <NavLink
+          end
           className={
             url.pathname.includes("home") || url.pathname === "/"
               ? "selected"
               : ""
           }
-          to="home">
+          to="/home">
           Home
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           className={url.pathname.includes("daily") ? "selected" : ""}
-          to="daily">
+          to="/daily">
           Daily
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           className={url.pathname.includes("hourly") ? "selected" : ""}
-          to="hourly">
+          to="/hourly">
           Hourly
-        </Link>
+        </NavLink>
       </nav>
       {localStorage.getItem("history") && (
         <aside>
