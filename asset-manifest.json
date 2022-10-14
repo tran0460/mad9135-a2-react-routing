@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mad9135-a2-react-routing/static/css/main.e2f63bf6.css",
-    "main.js": "/mad9135-a2-react-routing/static/js/main.0f754b0e.js",
+    "main.css": "/mad9135-a2-react-routing/static/css/main.51815c13.css",
+    "main.js": "/mad9135-a2-react-routing/static/js/main.1f1ea971.js",
     "index.html": "/mad9135-a2-react-routing/index.html",
-    "main.e2f63bf6.css.map": "/mad9135-a2-react-routing/static/css/main.e2f63bf6.css.map",
-    "main.0f754b0e.js.map": "/mad9135-a2-react-routing/static/js/main.0f754b0e.js.map"
+    "main.51815c13.css.map": "/mad9135-a2-react-routing/static/css/main.51815c13.css.map",
+    "main.1f1ea971.js.map": "/mad9135-a2-react-routing/static/js/main.1f1ea971.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2f63bf6.css",
-    "static/js/main.0f754b0e.js"
+    "static/css/main.51815c13.css",
+    "static/js/main.1f1ea971.js"
   ]
 }
